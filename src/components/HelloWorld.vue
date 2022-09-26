@@ -4,16 +4,18 @@
       <source :src="CardFinal" />
     </video>
     <div v-if="animationData" class="hello">
-      <video
-        v-for="video in videos"
-        :key="video.id"
-        loop
-        muted
-        autoplay
-        playsinline
-      >
-        <source :src="video.src" />
-      </video>
+      <template v-if="loaded">
+        <video
+          v-for="video in videos"
+          :key="video.id"
+          loop
+          muted
+          autoplay
+          playsinline
+        >
+          <source :src="video.src" />
+        </video>
+      </template>
       <Lottie
         ref="anim"
         :options="defaultOptions"
@@ -62,15 +64,23 @@ export default {
       console.log(anim);
       this.anim = anim;
       this.anim.addEventListener("complete", () => this.animationCompleted());
+      this.anim.addEventListener("DOMLoaded", () => this.imageLoaded());
     },
     animationCompleted() {
-      alert("Loading Completed!");
+      console.log("Loading Completed!");
+    },
+    imageLoaded() {
+      setTimeout(() => {
+        this.loaded = true;
+      }, 4300);
+      console.log("loaded");
     },
   },
   data() {
     return {
       animationData: null,
       defaultOptions: {},
+      loaded: false,
       videos: [
         {
           id: 1,
