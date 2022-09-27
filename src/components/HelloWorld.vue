@@ -19,8 +19,8 @@
       <Lottie
         ref="anim"
         :options="defaultOptions"
-        :height="96"
-        :width="128"
+        :height="150"
+        :width="340"
         class="lottie"
         @DOMLoaded="handleDomloaded"
         @animCreated="handleDomloaded"
@@ -35,6 +35,8 @@ import Character from "./../assets/Webm/Character.webm";
 import CardFinal from "./../assets/Webm/CardFinal.mp4";
 import Halo from "./../assets/Webm/Halo.webm";
 import Thunder from "./../assets/Webm/Thunder.webm";
+import TestWebm from "./../assets/Webm/test.webm";
+// import TestAvi from "./../assets/Webm/test.265.avi";
 import Lottie from "vue-lottie";
 export default {
   name: "HelloWorld",
@@ -50,6 +52,8 @@ export default {
     this.CardFinal = CardFinal;
     this.Halo = Halo;
     this.Thunder = Thunder;
+    this.TestWebm = TestWebm;
+    // this.TestAvi = TestAvi;
     const response = await fetch("/Card.json");
     const animationData = await response.json();
     this.animationData = animationData;
@@ -82,21 +86,33 @@ export default {
       defaultOptions: {},
       loaded: false,
       videos: [
-        {
-          id: 1,
-          src: Background,
-        },
+        // {
+        //   id: 1,
+        //   src: Background,
+        // },
         // {
         //   id: 2,
         //   src: Character,
         // },
+        // {
+        //   id: 3,
+        //   src: Halo,
+        // },
+        // {
+        //   id: 4,
+        //   src: Thunder,
+        // },
+        // {
+        //   id: 5,
+        //   src: TestWebm,
+        // },
+        // {
+        //   id: 6,
+        //   src: "/images/test.265.avi",
+        // },
         {
-          id: 3,
-          src: Halo,
-        },
-        {
-          id: 4,
-          src: Thunder,
+          id: 7,
+          src: CardFinal,
         },
       ],
     };
