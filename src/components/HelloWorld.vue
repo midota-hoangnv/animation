@@ -86,22 +86,22 @@ export default {
       defaultOptions: {},
       loaded: false,
       videos: [
-        // {
-        //   id: 1,
-        //   src: Background,
-        // },
+        {
+          id: 1,
+          src: Background,
+        },
         // {
         //   id: 2,
         //   src: Character,
         // },
-        // {
-        //   id: 3,
-        //   src: Halo,
-        // },
-        // {
-        //   id: 4,
-        //   src: Thunder,
-        // },
+        {
+          id: 3,
+          src: Halo,
+        },
+        {
+          id: 4,
+          src: Thunder,
+        },
         // {
         //   id: 5,
         //   src: TestWebm,
@@ -110,10 +110,10 @@ export default {
         //   id: 6,
         //   src: "/images/test.265.avi",
         // },
-        {
-          id: 7,
-          src: CardFinal,
-        },
+        // {
+        //   id: 7,
+        //   src: CardFinal,
+        // },
       ],
     };
   },
