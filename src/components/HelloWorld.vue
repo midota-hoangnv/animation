@@ -25,6 +25,23 @@
         @DOMLoaded="handleDomloaded"
         @animCreated="handleDomloaded"
       />
+      <template v-if="loaded">
+        <video
+          style="opacity: 0"
+          id="greenscreenvideo"
+          :src="Particule"
+          loop
+          autoplay
+          muted
+        ></video>
+        <a-scene embedded vr-mode-ui="false">
+          <a-plane
+            material="shader: chromakey; src: #greenscreenvideo; color: 0.913725490196078 0.043137254901961 1"
+            position="0 1 -10"
+            scale="15 25 15"
+          ></a-plane>
+        </a-scene>
+      </template>
     </div>
   </div>
 </template>
@@ -36,8 +53,11 @@ import CardFinal from "./../assets/Webm/CardFinal.mp4";
 import Halo from "./../assets/Webm/Halo.webm";
 import Thunder from "./../assets/Webm/Thunder.webm";
 import TestWebm from "./../assets/Webm/test.webm";
+import Particule from "./../assets/Webm/particule.mp4";
 // import TestAvi from "./../assets/Webm/test.265.avi";
 import Lottie from "vue-lottie";
+import "aframe";
+import "aframe-chromakey-material";
 export default {
   name: "HelloWorld",
   props: {
@@ -53,6 +73,7 @@ export default {
     this.Halo = Halo;
     this.Thunder = Thunder;
     this.TestWebm = TestWebm;
+    this.Particule = Particule;
     // this.TestAvi = TestAvi;
     const response = await fetch("/Card.json");
     const animationData = await response.json();
