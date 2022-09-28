@@ -7,11 +7,11 @@
 </head>
 
 <body>
-  <div style="background: red">
-    <video style="opacity: 0;" id="greenscreenvideo" src="./example.mp4" loop autoplay muted></video>
+  <div style="background-image: url('https://via.placeholder.com/350x150');">
+    <video style="opacity: 0;" id="greenscreenvideo" src="./particule.mp4" loop autoplay muted></video>
     <a-scene>
       <!-- <a-sky src="https://picsum.photos/1920/1080?random=1" rotation="0 0 0"></a-sky> -->
-      <a-plane material="shader: chromakey; src: #greenscreenvideo; color: 0.1 0.9 0.2" position="0 1 -10"
+      <a-plane material="shader: chromakey; src: #greenscreenvideo; color: 0.913725490196078 0.043137254901961 1" position="0 1 -10"
         scale="15 25 15"></a-plane>
       <!-- <a-sphere
           animation="property: object3D.rotation.y; to: -360; loop: true; easing: linear; dur: 10000"
